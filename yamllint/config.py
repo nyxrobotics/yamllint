@@ -38,7 +38,7 @@ class YamlLintConfig(object):
         self.locale = None
 
         if file is not None:
-            with open(file) as f:
+            with open(os.path.expanduser(file), "r") as f:
                 content = f.read()
 
         self.parse(content)
